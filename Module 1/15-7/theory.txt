@@ -1,0 +1,26 @@
+OOP:Object Oriented Programming
+
+1)Object
+2)Class
+3)Abstraction
+4)Encapsualtion
+5)Inheritance
+6)Polymorphism
+
+$id->variable
+${id}->object
+
+Constructor:method having a same as a classname
+
+types of constructor
+1)default
+2)parameterized
+3)named
+
+keyword:
+this
+static->variable,method
+
+
+
+if(a>b)?a:b
