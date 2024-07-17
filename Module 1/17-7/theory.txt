@@ -1,0 +1,10 @@
+OOP -> Object Orienetd Programming
+
+
+1)object : Any Entity which has own state and behaviour that is called an object
+2)class : Collection of objects
+3)Abstraction : Hiding internal details and showing funcitonalities
+4)Encpasulation : Wrapping up of data or binding of data
+5)Inheritance : When one object acquire all the properties and behaviour of parent class
+6)Polymorphism: Many ways to perform anything
+ 
