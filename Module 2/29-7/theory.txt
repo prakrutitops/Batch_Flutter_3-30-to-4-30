@@ -1,0 +1,20 @@
+MaterialApp -> per app
+Scaffold->per screen
+
+Widget
+
+Col
+Row
+
+Text
+Image
+ElevatedButton
+SizedBox
+
+
+push->entry
+pop->exit
+
+
+
+
