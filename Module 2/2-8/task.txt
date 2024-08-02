@@ -1,0 +1,15 @@
+Firstname
+Lastname
+Email
+Mobile Number
+Password
+Confirm Password
+
+1.Empty value not acceptable
+2.in first and lastname only letters will accpt
+3.Email proper format
+4.Mobile number only accpets digit
+5.Password -> Normal password format
+6.password and confirm password must be same
+7. Signup Succesful
+
