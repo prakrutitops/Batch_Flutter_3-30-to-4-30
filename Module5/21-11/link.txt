@@ -1,0 +1,2 @@
+https://www.geeksforgeeks.org/flutter-working-with-animations/
+https://www.geeksforgeeks.org/running-background-tasks-in-flutter/
