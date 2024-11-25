@@ -6,7 +6,7 @@ import 'package:finalproject7/login/widgets/header.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 import '../Register/register.dart';
-
+import 'package:http/http.dart' as http;
 
 class Login extends StatefulWidget{
   @override
@@ -267,10 +267,12 @@ class LoginPage extends State<Login>
                               {
                                // viewData();
 
-                                if (!username.text.isEmpty && !password.text.isEmpty && !mobileno.text.isEmpty && mobileno.text.length==10) {
-
+                                if (!username.text.isEmpty && !password.text.isEmpty && !mobileno.text.isEmpty && mobileno.text.length==10)
+                                {
+                                       logindata();
                                 }
-                                else{
+                                else
+                                {
                                   if(username.text.isEmpty){
                                     final snackBar = SnackBar(
                                       content: Text('Please Enter Username',
@@ -384,6 +386,31 @@ class LoginPage extends State<Login>
         ),
       ),
     );
+  }
+
+  void logindata()async
+  {
+    var response = await http.post(
+        Uri.parse("https://prakrutitech.buzz/Project_API/login.php"),
+        body:
+        {
+          "mobileno": mobileno.text.toString(),
+          "password": password.text.toString(),
+        });
+    var data = json.decode(response.body);
+    if (data == 0)
+    {
+      print("fail");
+      final snackbar = SnackBar(
+        content: const Text('Login Fail'),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+    }
+    else
+    {
+      print("success");
+
+    }
   }
 
 
