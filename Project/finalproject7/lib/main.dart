@@ -1,4 +1,4 @@
-import 'package:finalproject7/splash_screen/splashscreen.dart';
+import 'package:finalproject7/user/splash_screen/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main()
