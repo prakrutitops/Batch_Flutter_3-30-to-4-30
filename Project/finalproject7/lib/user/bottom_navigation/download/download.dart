@@ -73,14 +73,16 @@ class _DownloadState extends State<Download>
                     },
                   ),
                   Container(
-                    height: size.height*5/100,
+                    height: size.height*10/100,
                     width: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: BoxDecoration
+                      (
                       color: kGold,
                     ),
                     child: ElevatedButton(
                       child: Text("Delete".toUpperCase(),style: TextStyle(color: kDarkBrown,fontStyle: FontStyle.italic)),
-                      onPressed: (){
+                      onPressed: ()
+                      {
                         showDialog(
                           context: context,
                           builder: (ctx) => AlertDialog(
@@ -90,14 +92,16 @@ class _DownloadState extends State<Download>
                             actions: <Widget>[
                               ElevatedButton
                                 (
-                                onPressed: () {
+                                onPressed: ()
+                                {
                                   Navigator.of(ctx).pop();
                                 },
-                                child: Text("Cancel",style: TextStyle(color: kBrown)),
+                                child: Text("Cancel",style: TextStyle(color: kBrown),),
                               ),
-                              ElevatedButton(
+                              ElevatedButton
+                                (
                                 onPressed: () {
-                                  //deleteCategory(index);
+                                  deleteCategory(index);
                                   Navigator.of(context).pop();
                                 },
                                 child: Text("Delete",style: TextStyle(color: kBrown)),
@@ -116,4 +120,14 @@ class _DownloadState extends State<Download>
       ),
     );
   }
+
+  void deleteCategory(int index)
+  {
+    db.deleteData(data[index].id!!);
+    setState(()
+    {
+      data.removeAt(index);
+    });
+  }
+
 }
