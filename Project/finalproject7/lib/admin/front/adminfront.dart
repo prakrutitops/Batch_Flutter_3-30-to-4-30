@@ -1,16 +1,19 @@
 import 'package:finalproject7/admin/adminlogin.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../user/constants.dart';
+import '../bottom_navigation/adminhome/adminhome.dart';
+import '../bottom_navigation/adminupload/adminupload.dart';
 
 
-class AdminFront extends StatefulWidget{
+class AdminFront extends StatefulWidget
+{
   @override
   FrontPage createState() => FrontPage();
 }
 
-class FrontPage extends State<AdminFront> {
+class FrontPage extends State<AdminFront>
+{
 
   late SharedPreferences logindata;
 
@@ -20,7 +23,8 @@ class FrontPage extends State<AdminFront> {
     initial();
   }
 
-  void initial() async {
+  void initial() async
+  {
     logindata = await SharedPreferences.getInstance();
     logindata.setBool('ewishesadmin', false);
 
@@ -28,9 +32,10 @@ class FrontPage extends State<AdminFront> {
 
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[
-    //Home(),
-    //Download(),
+  static List<Widget> _widgetOptions = <Widget>
+  [
+    AdminHome(),
+    AdminUpload(),
   ];
 
   void _onItemTapped(int index) {
@@ -40,7 +45,8 @@ class FrontPage extends State<AdminFront> {
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       appBar: AppBar(
         title: Text('E wishes', style: TextStyle(color: kGold),),
@@ -61,7 +67,7 @@ class FrontPage extends State<AdminFront> {
         ],
       ),
       body: Center(
-        //child: _widgetOptions.elementAt(_selectedIndex),
+        child: _widgetOptions.elementAt(_selectedIndex),
       ),
       backgroundColor: kLightGold,
       bottomNavigationBar: BottomNavigationBar(

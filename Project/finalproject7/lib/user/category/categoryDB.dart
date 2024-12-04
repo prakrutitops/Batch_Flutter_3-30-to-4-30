@@ -25,7 +25,8 @@ class DB {
     return data.map((e) => CategoryModel.formMap(e)).toList();
   }
 
-  Future<void> deleteData(int id) async {
+  Future<void> deleteData(int id) async
+  {
     final Database db = await initDB();
     await db.delete("CategoryDownload", where: "id=?", whereArgs: [id]);
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import '../bottom_navigation/download/download.dart';
 import '../bottom_navigation/home/home.dart';
 import '../constants.dart';
 import '../login/login.dart';
@@ -31,7 +31,7 @@ class FrontPage extends State<Front> {
   static List<Widget> _widgetOptions = <Widget>
   [
     Home(),
-    //Download(),
+    Download(),
   ];
 
 

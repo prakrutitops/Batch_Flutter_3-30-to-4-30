@@ -48,6 +48,8 @@ dependencies:
   image_gallery_saver: any
   sqflite: any
   fluttertoast: ^8.2.5
+  image_picker: any
+  file_picker: ^8.0.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
