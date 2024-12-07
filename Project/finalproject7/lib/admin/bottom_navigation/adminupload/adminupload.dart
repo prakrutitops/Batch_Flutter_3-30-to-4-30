@@ -356,7 +356,8 @@ class AdminUploadPage extends State<AdminUpload> {
                                 // ignore: use_build_context_synchronously
                                 Navigator.of(ctx).pop();
                               } else {
-                                if (_myCategory == null) {
+                                if (_myCategory == null)
+                                {
                                   Fluttertoast.showToast(
                                       msg: "Please Select Category",
                                       toastLength: Toast.LENGTH_LONG,
