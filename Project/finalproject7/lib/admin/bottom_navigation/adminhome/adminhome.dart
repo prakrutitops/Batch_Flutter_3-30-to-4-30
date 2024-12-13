@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 
 import '../../../user/constants.dart';
+import '../../category/category.dart';
 import '../../front/adminfront.dart';
 
 
@@ -108,13 +109,14 @@ class _Items extends State<Items>{
     });
   }
   //
-  // void updateCategoryName(var id){
-  //   var url = "https://amisha1299.000webhostapp.com/Ewishes/Category/category_update.php";
-  //   http.post(url,body: {
-  //     'id': id,
-  //     'category_name': update_category.text,
-  //   });
-  // }
+  void updateCategoryName(var id)
+  {
+    var url = "https://prakrutitech.buzz/Project_API/category_update.php";
+    http.post(Uri.parse(url),body: {
+      'id': id,
+      'category_name': update_category.text.toString(),
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -128,8 +130,9 @@ class _Items extends State<Items>{
           shadowColor: kBrown,
           elevation: 3,
           child: ListTile(
-            onTap: (){
-             // Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>AdminCategory(index: list_[index]['id'],category_name: list_[index]['category_name'])));
+            onTap: ()
+            {
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>AdminCategory(index: list_[index]['id'],category_name: list_[index]['category_name'])));
             },
             leading: Icon(Icons.list,color: kBrown,),
             trailing: InkWell(
@@ -224,9 +227,10 @@ class _Items extends State<Items>{
                           ElevatedButton(
                             onPressed: () {
                               if(!update_category.text.isEmpty){
-                                //updateCategoryName(list_[index]['id']);
+                                updateCategoryName(list_[index]['id']);
                                 Fluttertoast.showToast(msg: "Category Updated Successfully",toastLength: Toast.LENGTH_LONG,timeInSecForIosWeb: 1);
-                                Navigator.of(context).pop();
+                                Navigator.of(ctx).pop();
+                                //Navigator.of(context).pop();
                               }
                               else{
                                 if(update_category.text.isEmpty){
